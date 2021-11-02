@@ -1,0 +1,204 @@
+-- *****************************************************************************
+-- ** automatically created redirect restore script
+-- *****************************************************************************
+UPDATE COMMAND OPTIONS USING S ON Z ON SAM1_NODE0000.out V ON;
+SET CLIENT ATTACH_MEMBER  0;
+SET CLIENT CONNECT_MEMBER 0;
+-- *****************************************************************************
+-- ** automatically created redirect restore script
+-- *****************************************************************************
+RESTORE DATABASE SAM1
+-- USER  <username>
+-- USING '<password>'
+FROM '/node1/data0/db2/S2T01/IT99/backup'
+TAKEN AT 20171025152057
+-- ON '/node1/data0/db2/S2T01/IT99/tablespace/SAM1'
+-- DBPATH ON '<target-directory>'
+INTO SAM1T
+-- NEWLOGPATH '/node1/logs/db2/S2T01/IT99/log/SAM1/NODE0000/LOGSTREAM0000/'
+WITH 2 BUFFERS
+BUFFER 1024
+-- REPLACE HISTORY FILE
+-- REPLACE EXISTING
+REDIRECT
+PARALLELISM 10
+-- WITHOUT ROLLING FORWARD
+WITHOUT PROMPTING
+;
+-- *****************************************************************************
+-- ** storage group definition
+-- **   Default storage group ID                 = 0
+-- **   Number of storage groups                 = 5
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Storage group name                         = IBMSTOGROUP
+-- **   Storage group ID                         = 0
+-- **   Data tag                                 = None
+-- *****************************************************************************
+-- SET STOGROUP PATHS FOR IBMSTOGROUP
+-- ON '/node1/data0/db2/S2T01/IT99/tablespace/SAM1'
+-- ;
+-- *****************************************************************************
+-- ** Storage group name                         = TS_U
+-- **   Storage group ID                         = 1
+-- **   Data tag                                 = None
+-- *****************************************************************************
+-- SET STOGROUP PATHS FOR TS_U
+-- ON '/node1/data0/db2/S2T01/IT99/TS_U_SPACE/SAM1'
+-- ;
+-- *****************************************************************************
+-- ** Storage group name                         = TS_M
+-- **   Storage group ID                         = 2
+-- **   Data tag                                 = None
+-- *****************************************************************************
+-- SET STOGROUP PATHS FOR TS_M
+-- ON '/node1/data0/db2/S2T01/IT99/TS_M_SPACE/SAM1'
+-- ;
+-- *****************************************************************************
+-- ** Storage group name                         = TS_B
+-- **   Storage group ID                         = 3
+-- **   Data tag                                 = None
+-- *****************************************************************************
+-- SET STOGROUP PATHS FOR TS_B
+-- ON '/node1/data0/db2/S2T01/IT99/TS_B_SPACE/SAM1'
+-- ;
+-- *****************************************************************************
+-- ** Storage group name                         = TS_N
+-- **   Storage group ID                         = 4
+-- **   Data tag                                 = None
+-- *****************************************************************************
+-- SET STOGROUP PATHS FOR TS_N
+-- ON '/node1/data0/db2/S2T01/IT99/TS_N_SPACE/SAM1'
+-- ;
+-- *****************************************************************************
+-- ** table space definition
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = SYSCATSPACE
+-- **   Tablespace ID                            = 0
+-- **   Tablespace Type                          = Database managed space                      
+-- **   Tablespace Content Type                  = All permanent data. Regular table space.    
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 4
+-- **   Using automatic storage                  = Yes     
+-- **   Storage group ID                         = 0
+-- **   Source storage group ID                  = -1
+-- **   Data tag                                 = None
+-- **   Auto-resize enabled                      = Yes     
+-- **   Total number of pages                    = 32768
+-- **   Number of usable pages                   = 32764
+-- **   High water mark (pages)                  = 26812
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = TEMPSPACE1
+-- **   Tablespace ID                            = 1
+-- **   Tablespace Type                          = System managed space                        
+-- **   Tablespace Content Type                  = System Temporary data                       
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 32
+-- **   Using automatic storage                  = Yes     
+-- **   Total number of pages                    = 1
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = USERSPACE1
+-- **   Tablespace ID                            = 2
+-- **   Tablespace Type                          = Database managed space                      
+-- **   Tablespace Content Type                  = All permanent data. Large table space.      
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 32
+-- **   Using automatic storage                  = Yes     
+-- **   Storage group ID                         = 0
+-- **   Source storage group ID                  = -1
+-- **   Data tag                                 = -1
+-- **   Auto-resize enabled                      = Yes     
+-- **   Total number of pages                    = 8192
+-- **   Number of usable pages                   = 8160
+-- **   High water mark (pages)                  = 352
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = SYSTOOLSPACE
+-- **   Tablespace ID                            = 3
+-- **   Tablespace Type                          = Database managed space                      
+-- **   Tablespace Content Type                  = All permanent data. Large table space.      
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 4
+-- **   Using automatic storage                  = Yes     
+-- **   Storage group ID                         = 0
+-- **   Source storage group ID                  = -1
+-- **   Data tag                                 = -1
+-- **   Auto-resize enabled                      = Yes     
+-- **   Total number of pages                    = 8192
+-- **   Number of usable pages                   = 8188
+-- **   High water mark (pages)                  = 112
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = NSPACE
+-- **   Tablespace ID                            = 4
+-- **   Tablespace Type                          = Database managed space                      
+-- **   Tablespace Content Type                  = All permanent data. Large table space.      
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 32
+-- **   Using automatic storage                  = Yes     
+-- **   Storage group ID                         = 4
+-- **   Source storage group ID                  = -1
+-- **   Data tag                                 = -1
+-- **   Auto-resize enabled                      = Yes     
+-- **   Total number of pages                    = 8192
+-- **   Number of usable pages                   = 8160
+-- **   High water mark (pages)                  = 224
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = BSPACE
+-- **   Tablespace ID                            = 5
+-- **   Tablespace Type                          = Database managed space                      
+-- **   Tablespace Content Type                  = All permanent data. Large table space.      
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 32
+-- **   Using automatic storage                  = Yes     
+-- **   Storage group ID                         = 3
+-- **   Source storage group ID                  = -1
+-- **   Data tag                                 = -1
+-- **   Auto-resize enabled                      = Yes     
+-- **   Total number of pages                    = 8192
+-- **   Number of usable pages                   = 8160
+-- **   High water mark (pages)                  = 224
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = URSPACE
+-- **   Tablespace ID                            = 6
+-- **   Tablespace Type                          = Database managed space                      
+-- **   Tablespace Content Type                  = All permanent data. Large table space.      
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 32
+-- **   Using automatic storage                  = Yes     
+-- **   Storage group ID                         = 1
+-- **   Source storage group ID                  = -1
+-- **   Data tag                                 = -1
+-- **   Auto-resize enabled                      = Yes     
+-- **   Total number of pages                    = 8192
+-- **   Number of usable pages                   = 8160
+-- **   High water mark (pages)                  = 224
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** Tablespace name                            = MYSPACE
+-- **   Tablespace ID                            = 7
+-- **   Tablespace Type                          = Database managed space                      
+-- **   Tablespace Content Type                  = All permanent data. Large table space.      
+-- **   Tablespace Page size (bytes)             = 4096
+-- **   Tablespace Extent size (pages)           = 32
+-- **   Using automatic storage                  = Yes     
+-- **   Storage group ID                         = 2
+-- **   Source storage group ID                  = -1
+-- **   Data tag                                 = -1
+-- **   Auto-resize enabled                      = Yes     
+-- **   Total number of pages                    = 8192
+-- **   Number of usable pages                   = 8160
+-- **   High water mark (pages)                  = 224
+-- *****************************************************************************
+-- *****************************************************************************
+-- ** start redirected restore
+-- *****************************************************************************
+RESTORE DATABASE SAM1 CONTINUE;
+-- *****************************************************************************
+-- ** end of file
+-- *****************************************************************************

@@ -1,0 +1,2 @@
+restore database SAM1 from /node1/data0/db2/S2T01/IT99/backup taken at 20171025152057 into SAM1T WITH 2 BUFFERS BUFFER 1024 redirect GENERATE SCRIPT restore-full.db2 PARALLELISM 10 WITHOUT PROMPTING;
+
